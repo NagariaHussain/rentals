@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-03-06 11:36:32.830795",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "source",
+  "distance",
+  "column_break_oupg",
+  "destination"
+ ],
+ "fields": [
+  {
+   "fieldname": "source",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Source",
+   "reqd": 1
+  },
+  {
+   "description": "(in KM)",
+   "fieldname": "distance",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Distance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_oupg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Destination",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-03-06 11:39:22.017095",
+ "modified_by": "Administrator",
+ "module": "Rentals",
+ "name": "Ride Booking Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

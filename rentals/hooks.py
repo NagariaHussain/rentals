@@ -28,7 +28,7 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {"User" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -67,8 +67,8 @@ app_license = "mit"
 # Installation
 # ------------
 
-# before_install = "rentals.install.before_install"
-# after_install = "rentals.install.after_install"
+before_install = "rentals.install.before_install"
+after_install = "rentals.install.after_install"
 
 # Uninstallation
 # ------------
@@ -102,9 +102,9 @@ app_license = "mit"
 # -----------
 # Permissions evaluated in scripted ways
 
-# permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
+permission_query_conditions = {
+	"Vehicle": "rentals.api.get_query_conditions_for_vehicle",
+}
 #
 # has_permission = {
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
@@ -122,34 +122,22 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"ToDo": {
+		"before_insert": "rentals.api.throw_emoji"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"rentals.tasks.all"
-# 	],
-# 	"daily": [
-# 		"rentals.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"rentals.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"rentals.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"rentals.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+    "Cron": {
+        "30 15 * * 3": [
+			"rentals.api.send_payment_reminders"
+		]
+	}
+}
 
 # Testing
 # -------
@@ -162,7 +150,7 @@ app_license = "mit"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "rentals.event.get_events"
 # }
-#
+# #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
@@ -227,3 +215,5 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+website_route_rules = [{'from_route': '/portal/<path:app_path>', 'to_route': 'portal'},]

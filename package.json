@@ -1,0 +1,12 @@
+{
+  "name": "rentals",
+  "version": "1.0.0",
+  "description": "Manage Rentals in Frappe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -52,4 +52,4 @@ ignore = [
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "tab"
-docstring-code-format = true
+# docstring-code-format = true

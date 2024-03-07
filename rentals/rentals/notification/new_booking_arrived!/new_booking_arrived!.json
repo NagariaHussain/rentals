@@ -1,0 +1,29 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "",
+ "creation": "2024-03-06 14:47:59.631318",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Ride Booking",
+ "enabled": 1,
+ "event": "New",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Hey, new booking has arrived!\n\n<a href=\"http://irfan.cabs:8000/app\">Click here to view</a>",
+ "message_type": "HTML",
+ "modified": "2024-03-06 14:47:59.631318",
+ "modified_by": "Administrator",
+ "module": "Rentals",
+ "name": "New Booking Arrived!",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "System Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "{{ doc.customer_name }} booked a vehicle!"
+}
